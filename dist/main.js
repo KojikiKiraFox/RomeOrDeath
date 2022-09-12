@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_heroEvent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/heroEvent */ \"./src/modules/heroEvent.js\");\n/* harmony import */ var _modules_rome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/rome */ \"./src/modules/rome.js\");\n\r\n\r\n\r\n(0,_modules_heroEvent__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()\r\n;(0,_modules_rome__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\n\n//# sourceURL=webpack://test/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_heroEvent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/heroEvent */ \"./src/modules/heroEvent.js\");\n/* harmony import */ var _modules_rome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/rome */ \"./src/modules/rome.js\");\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/timer */ \"./src/modules/timer.js\");\n\r\n\r\n\r\n\r\n(0,_modules_timer__WEBPACK_IMPORTED_MODULE_2__[\"default\"])()\r\n;(0,_modules_heroEvent__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()\r\n;(0,_modules_rome__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\n\n//# sourceURL=webpack://test/./src/index.js?");
 
 /***/ }),
 
@@ -37,6 +37,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst rome = () =>{\r\n //sadasd\r\n}\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (rome);\n\n//# sourceURL=webpack://test/./src/modules/rome.js?");
+
+/***/ }),
+
+/***/ "./src/modules/timer.js":
+/*!******************************!*\
+  !*** ./src/modules/timer.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst timer = () =>{\r\n    const h1 = document.getElementsByTagName('h1')[0];\r\n    const start = document.querySelector('.start');\r\n    const stop = document.querySelector('.stop');\r\n    const reset = document.querySelector('.restart');\r\n    let sec = 0;\r\n    let min = 1;\r\n    let t;\r\n    \r\n    function timerStop(){\r\n    \r\n    }\r\n\r\n    function tick(){\r\n        if (sec <= 0 && min <= 0){\r\n            timerStop()\r\n        }else if(min >= 1){\r\n            min--\r\n            sec=59\r\n        }else if (sec >= 60){\r\n            sec = 0;\r\n            min++;\r\n        }else if (sec < 60){\r\n                sec--\r\n        }else if (sec <= 0 && min <= 0){\r\n            timerStop()\r\n        };\r\n    }\r\n    function add() {\r\n        tick();\r\n        h1.textContent = (min > 9 ? min : \"0\" + min)\r\n                    + \":\" + (sec > 9 ? sec : \"0\" + sec);\r\n        timer();\r\n    };\r\n    function timer() {\r\n        t = setTimeout(add, 10);\r\n    }\r\n    \r\n    timer();\r\n    start.onclick = timer;\r\n    stop.onclick = function() {\r\n        clearTimeout(t);\r\n    }\r\n    reset.onclick = function() {\r\n        h1.textContent = \"00:00\";\r\n        sec = 0; \r\n        min = 1; \r\n    }\r\n}\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (timer);\n\n//# sourceURL=webpack://test/./src/modules/timer.js?");
 
 /***/ })
 
